@@ -77,11 +77,11 @@ button:hover .overlay {
   transition: all 600ms ease;
 }
 
-.cancel:hover .red_overlay {
+/* .cancel:hover .red_overlay {
   width: 100%;
   transform: translate(-50%) skew(0);
   cursor: pointer;
-}
+} */
 
 span {
   position: absolute;
@@ -93,4 +93,9 @@ span {
 
 .cancel:hover {
   cursor: pointer;
+}
+
+.cancel::before {
+  content: "cancel";
+  background-color: red;
 }
