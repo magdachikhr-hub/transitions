@@ -17,22 +17,29 @@ button {
   transition-delay: 300ms;
   position: relative;
 }
-button:hover {
+button.submit:hover {
   cursor: pointer;
   border: 1px solid lightcoral;
   background-color: white;
   color: lightcoral;
 }
-button:hover ~ .box {
+/* button:hover ~ .box {
   transform: translateX(200px);
-}
+} */
 
 .box {
   width: 200px;
   height: 200px;
   background-color: lightblue;
-  transform: translateX(-200px);
+  /* transform: translateX(-200px); */
   transition: all 500ms ease;
+  /* transform: rotate(20deg); */
+  /* transform: scale(1.5); */
+  /* transform: scaleX(5); */
+  /* transform: translateX(20px) rotate(50deg) scaleY(1.2); */
+  /* rotate: 50deg;
+  scale: 1.2; */
+  transform: skew(50deg);
 }
 
 .overlay {
@@ -46,4 +53,44 @@ button:hover ~ .box {
 
 button:hover .overlay {
   height: 50px;
+}
+
+.cancel {
+  margin: 0 100px;
+  width: 200px;
+  height: 50px;
+  border: 1px solid lightsalmon;
+  background-color: lightsalmon;
+  color: white;
+  font-size: 18px;
+  position: relative;
+}
+
+.red_overlay {
+  width: 0;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%) skew(-70deg);
+  transition: all 600ms ease;
+}
+
+.cancel:hover .red_overlay {
+  width: 100%;
+  transform: translate(-50%) skew(0);
+  cursor: pointer;
+}
+
+span {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 15px;
+  z-index: 2;
+}
+
+.cancel:hover {
+  cursor: pointer;
 }
